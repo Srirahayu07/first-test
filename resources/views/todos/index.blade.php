@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos</title>
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
-</head>
-<body>
-    <div class="container">
-        <h1 class="text-center">Halaman Todos</h1>
+@extends('layouts.app')
+
+@section('title')
+Todos
+@endsection
+
+@section('content')
+<h1 class="text-center">Halaman Todos</h1>
         <a href="crud" class="btn btn-primary">Halaman Crud</a> <br><br>
         <div class="row justify-content-center">
             <div class="col-md-8 offsets-md-2">
@@ -30,10 +27,4 @@
                 </div>
             </div>
         </div>
-
-</div>
-
-
-</table>
-</body>
-</html>
+@endsection
