@@ -16,13 +16,13 @@ CRUD Todos
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create Todos</h5>
+        <h3 class="modal-title" id="exampleModalLabel">Create Todos</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="/store-todos" method="POST">>
+        <form action="/store-todos" method="POST">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Name:</label>
             <input type="text" class="form-control" id="recipient-name">
@@ -39,12 +39,14 @@ CRUD Todos
             <option name="false" value="0">False</option>
             </select>
             </div>
+
+            <div class="modal-footer">
+            <button type="sumbit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Create</button>
+      </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create</button>
-      </div>
+      
     </div>
   </div>
 </div>
@@ -73,7 +75,7 @@ CRUD Todos
 
 </table>
 
-<script>
+<!-- <script type="text/javascript">
 $('#exampleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -83,6 +85,6 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('New message to ' + recipient)
   modal.find('.modal-body input').val(recipient)
 })
-</script>
+</script> -->
 @endsection
 
