@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-Creating Todos
+Edit Todos
 @endsection
 
 @section('content')
-<h1 class="text-center">Create Todos</h1>
+<h1 class="text-center">Edit Todos</h1>
 <div class="row justify-content-center">
 <div class="col-md-8">
 <a href="/todos" class="btn btn-primary">Back</a> <br><br>
@@ -25,24 +25,24 @@ Creating Todos
    
 </div>
 @endif
-<form action="/store-todos" method="POST">
+<form action="/todos/{{$todos->id}}/update-todos" method="POST">
 @csrf
+<input type="hidden" name="todo_id" value="{{$todos->id}}">
 <div class="form-group">
-Name: <input type="text" class="form-control" name="name"> </div>
+Name: <input type="text" class="form-control" name="name" value="{{$todos->name}}"> </div>
 
 <div class="form-group">
-Description: <textarea type="text" class="form-control" name="description"> </textarea></div>
+Description: <textarea type="text" class="form-control" name="description">{{$todos->description}} </textarea></div>
 
 <div class="form-group">
 Completed: 
 <select class="form-control" name="completed">
-    <option selected disabled>Choose...</option>
-    <option value="True">True</option>
-    <option value="False">False</option>
+    <option @if($todos->completed == 'True') selected value="{{ $todos->completed }}"@endif>True</option>
+    <option @if($todos->completed == 'False') selected value="{{ $todos->completed }}"@endif>False</option>
   </select>
 </div>
 
-<button type="submit" class="btn btn-success">Create</button>
+<button type="submit" class="btn btn-success">Update Todos</button>
 </form>
 
 </div>
@@ -50,3 +50,4 @@ Completed:
 </div>
 </div>
 @endsection
+
