@@ -14,7 +14,7 @@ CRUD Todos
 
 
 
-<table class="table table-bordered table-responsive table-hover">
+<table class="table table-border table-hover">
 
 
 <thead>
