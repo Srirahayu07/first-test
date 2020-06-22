@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{asset('/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/bootstrap-grid.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/bootstrap-reboot.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/bootstrap-reboot.min.css')}}">
+    <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/bootstrap.bundle.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/bootstrap.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/bootstrap.min.js')}}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
     <body>

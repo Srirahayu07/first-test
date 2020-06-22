@@ -40,7 +40,7 @@ Todos
                                 <i class="fas fa-edit" style="color:black"></i>
                             </a>
 
-                            <a href="/todos/{{$todo->id}}">
+                            <a href="/todos/{{$todo->id}}/delete">
                                 <i class="fas fa-times" style="color:red"></i>
                             </a>
                             </div>
