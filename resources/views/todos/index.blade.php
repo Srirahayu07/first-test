@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
-@section('title')
+<!-- @section('title')
 Todos
-@endsection
+@endsection -->
 
 @section('content')
 <h1 class="text-center">Halaman Todos</h1>
