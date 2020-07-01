@@ -1,14 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
-@section('title')
-Creating Todos
-@endsection
+
 
 @section('content')
 <h1 class="text-center">Create Todos</h1>
 <div class="row justify-content-center">
 <div class="col-md-8">
-<a href="/todos" class="btn btn-primary">Back</a> <br><br>
+<br><br>
 <div class="card card-default">
 <div class="card-header">New Todos</div>
 
@@ -37,8 +35,8 @@ Description: <textarea type="text" class="form-control" name="description"> </te
 Completed: 
 <select class="form-control" name="completed">
     <option selected disabled>Choose...</option>
-    <option value="True">True</option>
-    <option value="False">False</option>
+    <option value="1">True</option>
+    <option value="0">False</option>
   </select>
 </div>
 

@@ -37,8 +37,8 @@ Description: <textarea type="text" class="form-control" name="description">{{$to
 <div class="form-group">
 Completed: 
 <select class="form-control" name="completed">
-    <option @if($todos->completed == 'True') selected value="{{ $todos->completed }}"@endif>True</option>
-    <option @if($todos->completed == 'False') selected value="{{ $todos->completed }}"@endif>False</option>
+    <option @if($todos->completed == '1') selected value="{{ $todos->completed }}"@endif>True</option>
+    <option @if($todos->completed == '0') selected value="{{ $todos->completed }}"@endif>False</option>
   </select>
 </div>
 

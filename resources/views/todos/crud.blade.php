@@ -1,14 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
 
-@section('title')
+<!-- @section('title')
 CRUD Todos
-@endsection
+@endsection -->
 
 
 @section('content')
 <h1 class="text-center">Halaman Todos</h1>
-<a href="/todos" class="btn btn-primary">Back</a> <br><br>
+
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create New Todos</button> <br><br>
 

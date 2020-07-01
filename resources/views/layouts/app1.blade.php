@@ -32,12 +32,30 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 
   <div class="wrapper">
+  @include('admin.include.header')
     @include('admin.include.sidebar')
-    @include('admin.include.header')
-    @yield('content')
-    @include('admin.include.footer')
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+
+      @if(session()->has('success'))
+        <div class="alert alert-success">
+        {{session()->get('success')}}
+        </div>
+        @endif
+         
+
+               <div>
+               @yield('content')
+               </div>
+        </div>
+      </div>
+    
+   
 
   </div>
+   @include('admin.include.footer')
   <!-- ./wrapper -->
 
   <!-- jQuery -->

@@ -16,8 +16,8 @@ class TodosController extends Controller
         return view('todos.crud')->with('todos', Todo::all());
     }
 
-    public function show($todoId){
-        return view('todos.show')->with('todos', Todo::find($todoId));
+    public function show(Todo $todo){
+        return view('todos.show')->with('todos', $todo);
     }
 
     public function create(){
@@ -40,16 +40,16 @@ class TodosController extends Controller
         $todo->completed = $data['completed'];
 
         $todo->save();
-
+        session()->flash('success','Todos Created Successfuly');
         return redirect('/todos');
     }
 
-    public function edit($todoId){
+    public function edit(Todo $todo){
         
-         return view('todos.edit')->with('todos', Todo::find($todoId));
+         return view('todos.edit')->with('todos', $todo);
     }
 
-    public function update($todoId){
+    public function update(Todo $todo){
         $this->validate(request(),[
             'name'=>'required',
             'description'=>'required',
@@ -57,20 +57,27 @@ class TodosController extends Controller
         ]);
 
         $data = request()->all();
-        $todo=Todo::find($todoId);
+   
         $todo->name = $data['name'];
         $todo->description = $data['description'];
         $todo->completed = $data['completed'];
 
         $todo->save();
-
+        session()->flash('success','Todos Updated Successfuly');
         return redirect('/todos');
     }
 
-    public function delete($todoId){
-        $todo = Todo::find($todoId);
+    public function delete(Todo $todo){
+       
         $todo->delete();
+        session()->flash('success','Todos Deleted Successfuly');
+        return redirect('/todos');
+    }
 
+    public function completed(Todo $todo){
+        $todo->completed = true;
+        $todo->save();
+        session()->flash('success','Todos Completed Successfuly');
         return redirect('/todos');
     }
 }
