@@ -7,14 +7,14 @@
       </a>
 
       <!-- Sidebar -->
-      <div class="sidebar">
+      <div  class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img src="{{asset('admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">Administrator</a>
           </div>
         </div>
 
@@ -23,17 +23,25 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item has-treeview menu-open">
-              <a href="/todos" class="nav-link active">
+               <li class="nav-item">
+              <a href="/timeline" class="nav-link {{Request::segment('1') == 'timeline' ? 'active' :''}}">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                  Dashboard
+                  Timeline
+                </p>
+              </a>
+
+            <li class="nav-item">
+              <a href="/todos" class="nav-link {{Request::segment('1') == 'todos' ? 'active' :''}}">
+                <i class="nav-icon fas fa-file"></i>
+                <p>
+                  Daftar Berita
                 </p>
               </a>
               
             </li>
             <li class="nav-item">
-              <a href="/crud" class="nav-link">
+              <a href="/crud" class="nav-link {{Request::segment('1') == 'crud' ? 'active' :''}}">
                 <i class="nav-icon fas fa-file"></i>
                 <p>
                   Crud
@@ -41,7 +49,7 @@
               </a>
             </li>
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link ">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                   Layout Options
@@ -532,3 +540,5 @@
       </div>
       <!-- /.sidebar -->
     </aside>
+
+    

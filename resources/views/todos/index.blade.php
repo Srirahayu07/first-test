@@ -1,8 +1,5 @@
 @extends('layouts.app1')
 
-<!-- @section('title')
-Todos
-@endsection -->
 
 @section('content')
  <div class="row mb-2">
@@ -28,14 +25,14 @@ Todos
 
                     <div class="card-body">
                         <div class="list-group">
-                            @foreach($todos as $todo)
+                            @foreach($todo as $todoo)
                             <div class="row text-center">
-                            <div class="col-md-3">{{$todo->name}}</div>
+                            <div class="col-md-3">{{$todoo->name}}</div>
 
                                 <div class="col-md-3">
-                                 @if($todo->completed=='1')
+                                 @if($todoo->completed=='1')
                                  <p style="color:green"><i>Completed</i></p>
-                                     @elseif($todo->completed=='0')
+                                     @elseif($todoo->completed=='0')
                                  <p style="color:red"><i>Uncompleted</i></p>
                                      @else
 
@@ -45,23 +42,23 @@ Todos
 
                                 <div class="col-md-3">
 
-                                    <a href="/todos/{{$todo->id}}">
+                                    <a href="/todos/{{$todoo->id}}">
                                      <i class="fas fa-eye mr-2" style="color:black"></i>
                                     </a>
 
-                                    <a href="/todos/{{$todo->id}}/edit">
+                                    <a href="/todos/{{$todoo->id}}/edit">
                                      <i class="fas fa-edit mr-2" style="color:black"></i>
                                     </a>
 
-                                    <a href="#" data-toggle="modal" data-target="#myModal{{$todo->id}}">
+                                    <a href="#" data-toggle="modal" data-target="#myModal{{$todoo->id}}">
                                     <i class="fas fa-trash" style="color:black"></i>
                                     </a>
                                 </div>
 
                                 <div class="col-md-3">
 
-                                @if(!$todo->completed)
-                                <a href="/todos/{{$todo->id}}/completed" class="btn btn-warning btn-xs">Completed</a>
+                                @if(!$todoo->completed)
+                                <a href="/todos/{{$todoo->id}}/completed" class="btn btn-warning btn-xs">Completed</a>
                                 @endif
                                
                                 </div>
@@ -69,7 +66,7 @@ Todos
 
 
   <!-- The Modal -->
-  <div class="modal fade" id="myModal{{$todo->id}}">
+  <div class="modal fade" id="myModal{{$todoo->id}}">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -81,18 +78,19 @@ Todos
         
         <!-- Modal body -->
         <div class="modal-body">
-          Are you sure delete <i><b>{{$todo->name}}</b></i>?
+          Are you sure delete <i><b>{{$todoo->name}}</b></i>?
         </div>
         
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          <a href="/todos/{{$todo->id}}/delete"><button type="button" class="btn btn-danger">Yes</button></a>
+          <a href="/todos/{{$todoo->id}}/delete"><button type="button" class="btn btn-danger">Yes</button></a>
         </div>
         
       </div>
     </div>
   </div>
+
                             @endforeach
                         </div>
                     </div>

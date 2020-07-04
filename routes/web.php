@@ -25,3 +25,6 @@ Route::post('todos/{todo}/update-todos','TodosController@update');
 Route::get('todos/{todo}/delete', 'TodosController@delete');
 Route::get('admin','AdminController@index');
 Route::get('todos/{todo}/completed','TodosController@completed');
+Route::get('timeline','TodosController@timeline');
+Route::get('timeline/{todo}/profile', 'TodosController@profile');
+Route::get('timeline/{todo}/detail_news', 'TodosController@detail_news');

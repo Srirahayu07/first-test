@@ -25,20 +25,23 @@ Edit Todos
    
 </div>
 @endif
-<form action="/todos/{{$todos->id}}/update-todos" method="POST">
+<form action="/todos/{{$todo->id}}/update-todos" method="POST">
 @csrf
-<input type="hidden" name="todo_id" value="{{$todos->id}}">
+<input type="hidden" name="todo_id" value="{{$todo->id}}">
 <div class="form-group">
-Name: <input type="text" class="form-control" name="name" value="{{$todos->name}}"> </div>
+Narasumber: <input type="text" class="form-control" name="name" value="{{$todo->name}}"> </div>
 
 <div class="form-group">
-Description: <textarea type="text" class="form-control" name="description">{{$todos->description}} </textarea></div>
+Judul: <input type="text" class="form-control" name="judul" value="{{$todo->judul}}"> </div>
+
+<div class="form-group">
+Description: <textarea type="text" class="form-control" name="description">{{$todo->description}} </textarea></div>
 
 <div class="form-group">
 Completed: 
 <select class="form-control" name="completed">
-    <option @if($todos->completed == '1') selected value="{{ $todos->completed }}"@endif>True</option>
-    <option @if($todos->completed == '0') selected value="{{ $todos->completed }}"@endif>False</option>
+    <option @if($todo->completed == '1') selected value="{{ $todo->completed }}"@endif>True</option>
+    <option @if($todo->completed == '0') selected value="{{ $todo->completed }}"@endif>False</option>
   </select>
 </div>
 

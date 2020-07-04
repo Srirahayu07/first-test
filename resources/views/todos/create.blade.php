@@ -26,10 +26,13 @@
 <form action="/store-todos" method="POST">
 @csrf
 <div class="form-group">
-Name: <input type="text" class="form-control" name="name"> </div>
+Narasumber: <input type="text" class="form-control" name="name"> </div>
 
 <div class="form-group">
-Description: <textarea type="text" class="form-control" name="description"> </textarea></div>
+Judul: <input type="text" class="form-control" name="judul"> </div>
+
+<div class="form-group">
+Deskripsi: <textarea type="text" class="form-control" name="description"> </textarea></div>
 
 <div class="form-group">
 Completed: 

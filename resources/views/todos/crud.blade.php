@@ -1,53 +1,54 @@
 @extends('layouts.app1')
 
 
-<!-- @section('title')
-CRUD Todos
-@endsection -->
-
-
 @section('content')
+
+
 <h1 class="text-center">Halaman Todos</h1>
 
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create New Todos</button> <br><br>
 
+<div class="card">
+              <div class="card-header">
+                <h3 class="card-title">DataTable Todos</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Completed</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                      @foreach($todo as $todoo)
+                  <tr>
+                    <td>{{$todoo->name}}</td>
+                    <td>{{$todoo->description}}</td>
+                    <td>{{$todoo->completed}}</td>
+                    <td>
+                    <a href="#" class="btn btn-warning">Edit</a> ||
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+                </tr>
+        @endforeach
+        </tbody>
+        <tfoot>
+            <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Completed</th>
+                    <th>Action</th>
+                  </tr>
+        </tfoot>
+        </table>
+    </div>
+</div>
 
 
-<table class="table table-border table-hover">
-
-
-<thead>
-    <td>Name</td>
-    <td>Description</td>
-    <td>Completed</td>
-    <td>Action</td>
-</thead>
-
-@foreach($todos as $todo)
-<tr>
-    <td>{{$todo->name}}</td>
-    <td>{{$todo->description}}</td>
-    <td>{{$todo->completed}}</td>
-    <td>
-        <a href="#" class="btn btn-warning">Edit</a> ||
-        <a href="#" class="btn btn-danger">Delete</a>
-    </td>
-</tr>
-@endforeach
-
-</table>
-
-<!-- <script type="text/javascript">
-$('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
-})
-</script> -->
 @endsection
 

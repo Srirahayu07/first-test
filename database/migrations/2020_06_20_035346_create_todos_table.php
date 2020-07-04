@@ -13,9 +13,10 @@ class CreateTodosTable extends Migration
      */
     public function up()
     {
-        Schema::create('todos', function (Blueprint $table) {
+        Schema::create('todo', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('judul');
             $table->text('description');
             $table->boolean('completed');
             $table->timestamps();
@@ -29,6 +30,6 @@ class CreateTodosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todos');
+        Schema::dropIfExists('todo');
     }
 }
