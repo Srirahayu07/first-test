@@ -32,7 +32,7 @@
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">{{$todos->name}}</h3>
+                <h3 class="profile-username text-center">{{$todo->name}}</h3>
 
                 <p class="text-muted text-center">Software Engineer</p>
 
