@@ -20,7 +20,7 @@
               <!-- timeline time label -->
                @foreach($todo as $todo)
               <div class="time-label">
-                <span class="bg-red">{{ date('d F Y', strtotime($todo->created_at)) }}</span>
+                <span class="bg-dark">{{ date('d F Y', strtotime($todo->created_at)) }}</span>
               </div>
               <!-- /.timeline-label -->
               <!-- timeline item -->
@@ -29,7 +29,7 @@
                 <i class="fas fa-comments bg-blue"></i>
                 <div class="timeline-item">
                   <span class="time"><i class="fas fa-clock"></i> {{Carbon\Carbon::parse($todo->created_at)->diffForHumans()}} </span>
-                  <h3 class="timeline-header"><a href="/timeline/{{$todo->id}}/profile">{{$todo->judul}}</a></h3>
+                  <h3 class="timeline-header"><a>{{$todo->judul}}</a></h3>
                   <div class="timeline-body card-body">
                     
                     {{str_limit($todo->description,180,'...')}} <a href="/timeline/{{$todo->id}}/detail_news">[Baca Selengkapnya]</a>

@@ -15,6 +15,7 @@
     background-position: 0px 0px;
     image-rendering: -webkit-optimize-contrast;
 }
+.justify { text-align: justify;}
 
 
 </style>
@@ -50,7 +51,7 @@
                   
                 
                 
-                 <p>{{$todo->description}}</p>
+                 <p class="justify">{{$todo->description}}</p>
              </div>
 
             </div>
