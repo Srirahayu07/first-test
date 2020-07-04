@@ -16,13 +16,14 @@
 
 ## Masih Bingung
 - Belum bisa mengelompokkan sesuai tanggal pada menu timeline
-co: 4 juli 2020
+co: 
+*4 juli 2020
 1. berita kebakaran
 2. berita kesurupan
-5 juli 2020
+*5 juli 2020
 1. berita melahirkan
 2. berita ibu tiri
-6 juli 2020
+*6 juli 2020
 1. berita hewan kabur
 2. kabar kaburi
 
