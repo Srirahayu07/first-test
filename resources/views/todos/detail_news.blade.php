@@ -61,8 +61,11 @@
         <div class="card card-warning card-outline">
               <div class="card-body box-profile">
                   <h3>Berita lainnya</h3>
-                    <ol><li>{{$todo->judul}}</li>
-                    </ol>
+                    
+                     <ol>
+                       <li>{{$todo->judul}}</li>
+                     </ol>
+                     
                   
               </div>
             </div>

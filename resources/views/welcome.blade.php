@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <a href="/todos">Todos</a>
+                    <a href="/timeline">Todos</a>
                 </div>
             </div>
         </div>

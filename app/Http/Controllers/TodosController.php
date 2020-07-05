@@ -45,7 +45,7 @@ class TodosController extends Controller
             'completed'=>$request->completed,
         ]);
         session()->flash('success','Todos Created Successfuly');
-        return redirect('/todos');
+        return redirect('/timeline');
     }
 
     public function edit($id){
@@ -70,7 +70,7 @@ class TodosController extends Controller
 
         $todo->save();
         session()->flash('success','Todos Updated Successfuly');
-        return redirect('/todos');
+        return redirect('/timeline');
     }
 
     public function delete($id){

@@ -49,7 +49,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/crud" class="nav-link {{Request::segment('1') == 'crud' ? 'active' :''}}">
+              <a href="/crud" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
                 <p>
                   Logout
