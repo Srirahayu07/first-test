@@ -89,9 +89,15 @@ class TodosController extends Controller
     }
 
     public function timeline(){
+        
         $todo = DB::table('todo')->orderBy('created_at','desc')->get();
          return view('todos.timeline',['todo'=>$todo]);
         
+    }
+    public function cari(Request $request){
+        $cari = $request->cari;
+         $todo = DB::table('todo')->Where('created_at','like',"%".$cari."%")->orWhere('judul','like',"%".$cari."%")->orWhere('name','like',"%".$cari."%")->get();
+         return view('todos.timeline',['todo'=>$todo]);
     }
      public function profile($id){
          $todo = Todo::find($id);
@@ -100,7 +106,7 @@ class TodosController extends Controller
 
     public function detail_news($id){
         $todo = Todo::find($id);
-        
-        return view('todos.detail_news',['todo'=>$todo]);
+        $berita_lainnya = DB::table('todo')->orderBy('created_at','desc')->get();
+        return view('todos.detail_news',['todo'=>$todo, 'berita_lainnya'=>$berita_lainnya]);
 }
 }

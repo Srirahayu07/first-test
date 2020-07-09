@@ -1,7 +1,10 @@
 @extends('layouts.app1')
 
-
+<style>
+  .justify { text-align: justify;}
+</style>
 @section('content')
+
 
 
 <h1 class="text-center">Halaman Todos</h1>
@@ -28,7 +31,7 @@
                       @foreach($todo as $todoo)
                   <tr>
                     <td>{{$todoo->name}}</td>
-                    <td>{{$todoo->description}}</td>
+                    <td class="justify">{{$todoo->description}}</td>
                     <td>{{$todoo->completed}}</td>
                     <td>
                     <a href="#" class="btn btn-warning">Edit</a> ||

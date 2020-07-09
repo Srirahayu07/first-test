@@ -63,7 +63,10 @@
                   <h3>Berita lainnya</h3>
                     
                      <ol>
-                       <li>{{$todo->judul}}</li>
+                      @foreach($berita_lainnya as $berita)
+                        <li><a href="/timeline/{{$berita->id}}/detail_news">{{$berita ->judul}}</a></li>
+                       @endforeach
+
                      </ol>
                      
                   

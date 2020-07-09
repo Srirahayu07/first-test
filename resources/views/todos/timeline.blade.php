@@ -11,13 +11,23 @@
 
     <section class="content">
       <div class="container-fluid">
-        
+       <form action="/timeline/cari" method="GET">
+            <label>Pencarian: </label>
+            <input type="text" name="cari" style="width:500px;" placeholder="Cari Judul Berita / Tanggal Berita/ Narasumber" value="{{ old('cari') }}">
+              <input type="submit" value="CARI"> <br>
+             
+            </form><br>
         <!-- Timelime example  -->
         <div class="row">
+            
           <div class="col-md-12">
+           
+            
             <!-- The time line -->
             <div class="timeline">
               <!-- timeline time label -->
+              	
+		          @if (count($todo))
                @foreach($todo as $todo)
               <div class="time-label">
                 <span class="bg-dark">{{ date('d F Y', strtotime($todo->created_at)) }}</span>
@@ -27,7 +37,9 @@
               
               <div>
                 <i class="fas fa-comments bg-blue"></i>
+                
                 <div class="timeline-item">
+                  
                   <span class="time"><i class="fas fa-clock"></i> {{Carbon\Carbon::parse($todo->created_at)->diffForHumans()}} </span>
                   <h3 class="timeline-header"><a>{{$todo->judul}}</a></h3>
                   <div class="timeline-body card-body">
@@ -41,13 +53,13 @@
                  
                 </div>
               </div>
-              <!-- END timeline item -->
+            
+              <!-- END timeline item -->p
               <!-- timeline time label -->
-
-              
-             
-           
               @endforeach
+                @else
+            <div class="alert alert-danger">Data Tidak Ditemukan</div>
+              @endif
             </div>
           </div>
           <!-- /.col -->

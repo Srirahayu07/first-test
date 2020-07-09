@@ -28,3 +28,8 @@ Route::get('todos/{todo}/completed','TodosController@completed');
 Route::get('timeline','TodosController@timeline');
 Route::get('timeline/{todo}/profile', 'TodosController@profile');
 Route::get('timeline/{todo}/detail_news', 'TodosController@detail_news');
+Route::get('/timeline/cari','TodosController@cari');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
