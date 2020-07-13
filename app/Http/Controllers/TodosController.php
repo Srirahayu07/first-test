@@ -15,6 +15,11 @@ class TodosController extends Controller
         return view('todos.index',['todo'=>$todo]);
     }
 
+     public function index1(){
+        $todo = DB::table('todo')->orderBy('created_at','desc')->get();
+        return view('welcome',['todo'=>$todo]);
+    }
+
     public function crud(){
         $todo = DB::table('todo')->get();
         return view('todos.crud',['todo'=>$todo]);

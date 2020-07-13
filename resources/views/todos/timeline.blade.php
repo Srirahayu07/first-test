@@ -30,7 +30,7 @@
 		          @if (count($todo))
                @foreach($todo as $todo)
               <div class="time-label">
-                <span class="bg-dark">{{ date('d F Y', strtotime($todo->created_at)) }}</span>
+                <span class="bg-dark">{{ date('l, d F Y', strtotime($todo->created_at)) }}</span>
               </div>
               <!-- /.timeline-label -->
               <!-- timeline item -->
@@ -54,7 +54,7 @@
                 </div>
               </div>
             
-              <!-- END timeline item -->p
+              <!-- END timeline item -->
               <!-- timeline time label -->
               @endforeach
                 @else

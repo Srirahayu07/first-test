@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'TodosController@index1');
 Route::get('todos', 'TodosController@index');
 Route::get('crud', 'TodosController@crud');
 Route::get('todos/{todo}', 'TodosController@show');
